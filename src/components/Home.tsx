@@ -4,6 +4,13 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 
+const emailButtonStyle = {
+  color: "#d14836",
+  "&:hover": {
+    color: "#a53426",
+  },
+};
+
 const Home = () => {
   return (
     <Box
@@ -29,11 +36,9 @@ const Home = () => {
             whiteSpace: "nowrap",
             letterSpacing: "0.1em",
             fontFamily: "Roboto Mono, monospace",
-            animation: 
-              `typing 3.5s steps(14, end) forwards,
+            animation: `typing 3.5s steps(14, end) forwards,
               blink-caret 0.75s step-end infinite,
-              stop-blinking 1s step-end forwards 3s`
-            ,
+              stop-blinking 1s step-end forwards 3s`,
           }}
         >
           HELLO WORLD!
@@ -90,7 +95,7 @@ const Home = () => {
               href="https://www.linkedin.com/in/zoher-hussein/"
               target="_blank"
               aria-label="LinkedIn account link"
-              sx={{ color: "#0077b5", '&:hover': { color: "#005582" } }}
+              sx={{ color: "#0077b5", "&:hover": { color: "#005582" } }}
             >
               <LinkedInIcon fontSize="large" />
             </IconButton>
@@ -100,7 +105,7 @@ const Home = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Mail to email option"
-              sx={{ color: "#d14836", '&:hover': { color: "#a53426" } }}
+              sx={emailButtonStyle}
             >
               <EmailIcon fontSize="large" />
             </IconButton>
@@ -109,7 +114,7 @@ const Home = () => {
               href="https://github.com/Zoher45"
               target="_blank"
               aria-label="GitHub account link"
-              sx={{ color: "#333", '&:hover': { color: "#000" } }}
+              sx={{ color: "#333", "&:hover": { color: "#000" } }}
             >
               <GitHubIcon fontSize="large" />
             </IconButton>
@@ -118,7 +123,7 @@ const Home = () => {
               href="https://www.salesforce.com/trailblazer/profile"
               target="_blank"
               aria-label="Trailhead account link"
-              sx={{ color: "#00A1E0", '&:hover': { color: "#007bb5" } }}
+              sx={{ color: "#00A1E0", "&:hover": { color: "#007bb5" } }}
             >
               <Box
                 component="img"
