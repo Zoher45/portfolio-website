@@ -14,65 +14,68 @@ const Home = () => {
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        paddingTop: 15,
+        padding: { xs: 2, sm: 5 },
         position: "relative",
       }}
     >
-      <Typography variant="h6" gutterBottom>
-        <Box
-          component="span"
-          sx={{
-            display: "inline-block",
-            position: "relative",
-            overflow: "hidden",
-            borderRight: "0.15em solid black",
-            whiteSpace: "nowrap",
-            letterSpacing: "0.1em",
-            fontFamily: "Roboto Mono, monospace",
-            animation: `
-              typing 3.5s steps(14, end) forwards,
-              blink-caret 0.75s step-end infinite,
-              stop-blinking 1s step-end forwards 3s
-            `,
-          }}
-        >
-          HELLO WORLD!
-        </Box>
+      <Typography
+        variant="h6"
+        sx={{
+          marginBottom: 2,
+          fontFamily: "Roboto Mono, monospace",
+          letterSpacing: "0.1em",
+          borderRight: "0.15em solid black",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          animation: `
+            typing 3.5s steps(14, end) forwards,
+            blink-caret 0.75s step-end infinite,
+            stop-blinking 1s step-end forwards 3s
+          `,
+        }}
+      >
+        HELLO WORLD!
       </Typography>
 
-      <Typography variant="h4" gutterBottom>
-        Hey, I'm Zoher And Welcome To My Website!
+      <Typography
+        variant="h4"
+        sx={{
+          marginBottom: 4,
+          fontWeight: "bold",
+        }}
+      >
+        Hey, I'm Zoher and Welcome to My Website!
       </Typography>
 
       <Grid
         container
-        direction="row"
+        direction={{ xs: "column", sm: "row" }}
         justifyContent="center"
         alignItems="center"
-        paddingTop={5}
-        spacing={2}
+        spacing={4}
       >
         <Grid item>
           <Avatar
             alt="Profile Picture"
             src="./images/avatar.jpg"
             sx={{
-              width: 250,
-              height: 250,
+              width: { xs: 150, sm: 200, md: 250 },
+              height: { xs: 150, sm: 200, md: 250 },
               border: "2px solid grey",
               boxShadow: "0 5px 13px 0 #0097a7",
             }}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={10} sm={8} md={6}>
           <Typography
+            variant="body1"
             sx={{
+              marginTop: { xs: 2, sm: 0 },
               textAlign: "center",
-              fontVariant: "h6",
+              lineHeight: 1.6,
             }}
-            gutterBottom
           >
-            I'm an Associate Salesforce Engineer @ Xero. I'm passionate about
+            I'm an Associate Salesforce Engineer at Xero. I'm passionate about
             software, technology, and learning! This website highlights some key
             projects, certifications, and skills I've developed and am currently
             developing.
@@ -81,15 +84,16 @@ const Home = () => {
           <Grid
             container
             direction="row"
-            justifyContent="space-evenly"
+            justifyContent="center"
             alignItems="center"
-            sx={{ paddingTop: 2 }}
+            sx={{ marginTop: 3 }}
           >
             <IconButton
               component="a"
               href="https://www.linkedin.com/in/zoher-hussein/"
               target="_blank"
               aria-label="LinkedIn account link"
+              sx={{ color: "#0077b5", "&:hover": { color: "#005582" } }}
             >
               <LinkedInIcon fontSize="large" />
             </IconButton>
@@ -99,6 +103,7 @@ const Home = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Mail to email option"
+              sx={{ color: "#d14836", "&:hover": { color: "#a53426" } }}
             >
               <EmailIcon fontSize="large" />
             </IconButton>
@@ -107,6 +112,7 @@ const Home = () => {
               href="https://github.com/Zoher45"
               target="_blank"
               aria-label="GitHub account link"
+              sx={{ color: "#333", "&:hover": { color: "#000" } }}
             >
               <GitHubIcon fontSize="large" />
             </IconButton>
@@ -115,12 +121,13 @@ const Home = () => {
               href="https://www.salesforce.com/trailblazer/profile"
               target="_blank"
               aria-label="Trailhead account link"
+              sx={{ color: "#00A1E0", "&:hover": { color: "#007bb5" } }}
             >
               <Box
                 component="img"
                 src="/images/trailhead.svg"
                 alt="Trailhead Icon"
-                sx={{ width: 30, height: "auto", color: "black" }}
+                sx={{ width: 30, height: "auto" }}
               />
             </IconButton>
           </Grid>
