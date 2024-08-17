@@ -40,8 +40,7 @@ const About = () => {
             acquire. <br />
             In the first year, we covered algorithms, mathematics,
             statistics, and an introductory course to science as a whole. We
-            also worked on some mini-projects that kept me on my toes.{" "}
-            <br />
+            also worked on some mini-projects that kept me on my toes. <br />
             The second year was a little more intense. We worked on many
             projects, with the biggest highlight being the game we made. We
             developed the GUI, logic, and tests. It was an intense project
