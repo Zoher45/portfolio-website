@@ -45,13 +45,20 @@ const Certifications = () => {
       <Grid container spacing={2} justifyContent="center">
         {items.map((item, index) => (
           <Grid item xs={12} sm={6} md={3} key={index}>
-            <Card sx={{ maxWidth: 250, margin: "auto", borderRadius: 2, boxShadow: 3 }}>
+            <Card
+              sx={{
+                maxWidth: 250,
+                margin: "auto",
+                borderRadius: 2,
+                boxShadow: 3,
+              }}
+            >
               <CardMedia
                 component="img"
                 height="140"
                 image={item.imagePath}
                 alt={item.name}
-                sx={{ objectFit: "contain" }}
+                sx={{ objectFit: "contain", paddingTop: 1 }}
               />
               <CardContent>
                 <Typography gutterBottom variant="h6" component="div">
