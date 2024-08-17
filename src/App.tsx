@@ -43,7 +43,7 @@ const globalStyles = {
     margin: 0,
     padding: 0,
     boxSizing: "border-box",
-    backgroundColor: "#f0f0f0 !important",
+    backgroundColor: "#E0E0E0 !important",
   },
   h4: {
     fontFamily: "Roboto Slab, serif",
@@ -64,8 +64,8 @@ function App() {
         <Box sx={{ my: 4 }}>
           <Home />
           <About />
-          <Certifications />
           <Projects />
+          <Certifications />
         </Box>
       </Container>
     </ThemeProvider>

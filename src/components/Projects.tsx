@@ -17,7 +17,7 @@ const Projects = () => {
       `,
       imagePath: "./images/personalwebsite.jpg",
       projectLink: "https://github.com/Zoher45/portfolio-website",
-      skills: "TypeScript,MUI,React",
+      skills: "TypeScript,MUI,React,Vercel",
     },
     {
       name: "Auction Web Application",
@@ -47,13 +47,11 @@ const Projects = () => {
     {
       name: "Microcontroller Game - Catch",
       description: `
-                  This project was done in pairs where our task was to design a game that utilized the
-                  UC Fun kit (microcontroller). The software was developed using C, applying skills learned 
-                  from computer architecture and embedded systems. <br/>
-                  Catch it is a game where the player is trying to time the incoming lights. The player has control 
-                  of row six. The aim is to press the according button when the light is at row six. If timed as expected 
-                  there is a beep and a point is added to the score or else a life point is deducted.
-    `,
+                    This project involved designing a game with the UC Fun kit (microcontroller) using C. In "Catch It," 
+                    players time incoming lights and press the correct button when the light reaches row six. 
+                    A successful press adds a point, while a missed press deducts a life point.
+
+      `,
       imagePath: "./images/ucfunkit.jpg",
       projectLink: "https://github.com/Zoher45/ENCE260-Project",
       skills: "C,Computer Architecture",
@@ -80,11 +78,30 @@ const Projects = () => {
         textAlign: "center",
       }}
     >
-      <Typography variant="h4" paddingBottom={5} gutterBottom>
+      <Typography variant="h4" paddingBottom={3} gutterBottom>
         Projects
       </Typography>
 
-      <Carousel navButtonsAlwaysVisible={true}>
+      <Carousel
+        navButtonsAlwaysVisible={true}
+        indicatorIconButtonProps={{
+          style: {
+            padding: "10px",
+          },
+        }}
+        activeIndicatorIconButtonProps={{
+          style: {
+            backgroundColor: "#0097a7",
+            padding: "3px",
+          },
+        }}
+        indicatorContainerProps={{
+          style: {
+            marginTop: "30px",
+            textAlign: "center",
+          },
+        }}
+      >
         {items.map((item, i) => (
           <Item key={i} item={item} />
         ))}
@@ -109,7 +126,7 @@ function Item(props) {
         component="img"
         src={props.item.imagePath}
         alt="Project image"
-        sx={{ objectFit: "contain", height: 350 }}
+        sx={{ objectFit: "contain", height: 350, paddingTop: 1 }}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -121,10 +138,16 @@ function Item(props) {
         <br />
 
         {props.item.skills.split(",").map((item) => (
-          <Chip label={item} sx={{ marginX: 1 }} variant="outlined" />
+          <Chip label={item} sx={{ margin: "2px" }} variant="outlined" />
         ))}
       </CardContent>
-      <CardActions>
+      <CardActions
+        sx={{
+          justifyContent: "center",
+          display: "flex",
+          paddingBottom: 3,
+        }}
+      >
         <Button
           color="inherit"
           target="_blank"
