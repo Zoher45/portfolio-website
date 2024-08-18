@@ -79,13 +79,6 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom>
               Contact Infromation
             </Typography>
-            <Box>
-              <Box display="flex" alignItems="center">
-                <PhoneIcon />
-                <Link href="tel:+64210605736" color="inherit" sx={{ ml: 1 }}>
-                  +64210605736
-                </Link>
-              </Box>
               <Box display="flex" alignItems="center" sx={{ paddingTop: 2 }}>
                 <EmailIcon />
                 <Link
