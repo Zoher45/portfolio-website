@@ -83,7 +83,7 @@ const Footer = () => {
 
           <Grid item xs={12} sm={5}>
             <Typography variant="h6" gutterBottom>
-              Contact Infromation
+              Contact Information
             </Typography>
             <Box display="flex" alignItems="center" sx={{ paddingTop: 2 }}>
               <EmailIcon />
