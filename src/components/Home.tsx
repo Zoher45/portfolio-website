@@ -55,14 +55,16 @@ const Home = () => {
         justifyContent="center"
         alignItems="center"
         spacing={4}
+
+        sx={{paddingTop:5}}
       >
         <Grid item>
           <Avatar
             alt="Profile Picture"
             src="./images/avatar.jpg"
             sx={{
-              width: { xs: 150, sm: 200, md: 250 },
-              height: { xs: 150, sm: 200, md: 250 },
+              width: { xs: 150, sm: 250, md: 300 },
+              height: { xs: 150, sm: 250, md: 300 },
               border: "2px solid grey",
               boxShadow: "0 5px 13px 0 #0097a7",
             }}
@@ -102,9 +104,9 @@ const Home = () => {
             <IconButton
               component="a"
               href="mailto:zoher.azhar.hussein@gmail.com"
-              target="_blank"
+              target="_top"
               rel="noopener noreferrer"
-              aria-label="Mail to email option"
+              aria-label="Email option"
               sx={emailButtonStyle}
             >
               <EmailIcon fontSize="large" />

@@ -12,24 +12,44 @@ const Projects = () => {
       name: "Personal Website",
       description: `
                     This website was created to highlight key projects, about me, skills, and 
-                    certifications. <br/>
+                    certifications.
                     This project was developed using React, TypeScript and Material-UI (MUI).
       `,
-      imagePath: "./images/personalwebsite.jpg",
+      imagePath: "./images/personal-website.jpg",
       projectLink: "https://github.com/Zoher45/portfolio-website",
       skills: "TypeScript,MUI,React,Vercel",
     },
     {
+      name: "Client Website - Prime Finishes Limited",
+      description: `
+                    This was my first experience in creating and hosting a website for a small business.
+                    It was created using Wix, Canva and hosted through GoDaddy.
+      `,
+      imagePath: "./images/prime-finishes-limited.jpg",
+      projectLink: "",
+      skills: "Wix,GoDaddy,Canva",
+    },
+    {
+      name: "Employer Review Application",
+      description: `
+                    This was a group project, and the application was designed to review and provide feedback on employers. 
+                    It features a simple user interface for previous/current employees, casual browsers, employers, and candidates to share and view reviews.
+                    The project includes basic functionalities, such as viewing all employer rankings and linking reviews 
+                    to user accounts.
+      `,
+      imagePath: "./images/employer-review-applicatio.jpg",
+      projectLink: "https://github.com/Zoher45/Employer-Review-Application",
+      skills: "PHP,jQuery,Bootstrap,SQLite",
+    },
+    {
       name: "Auction Web Application",
       description: `
-                    This web application project was an auction website. <br/>
-                    Users could create accounts, and authentication was set up to allow posting
-                    listings, bidding on listings, searching auctions, and viewing bidding history. 
-                    Users could view auctions without logging in but could not post or bid without an account. <br/>
-                    This project was developed using React, TypeScript and Material-UI (MUI). API testing was conducted using 
-                    Postman, and various libraries were used throughout the project. <br/>
+                    This application, built with React, TypeScript, and Material-UI (MUI), enables users to 
+                    create accounts, post listings, place bids, search for auctions, and view bidding history. Users can
+                    browse auctions without logging in, but must be authenticated to post or bid. API testing was performed with 
+                    Postman, and various libraries were integrated into the project.
       `,
-      imagePath: "./images/auctionwebapp.jpg",
+      imagePath: "./images/auction-web-app.jpg",
       projectLink: "https://github.com/Zoher45/Auctions-Web-App",
       skills: "TypeScript,API,MUI,Postman,React",
     },
@@ -40,7 +60,7 @@ const Projects = () => {
                     is to establish an understanding of how socket programming works. <br/>
                     TCP implementation was done using Python for this project.
       `,
-      imagePath: "./images/socketprogramming.jpg",
+      imagePath: "./images/socket-programming.jpg",
       projectLink: "https://github.com/Zoher45/COSC264---Socket-Programming",
       skills: "Python",
     },
@@ -52,18 +72,18 @@ const Projects = () => {
                     A successful press adds a point, while a missed press deducts a life point.
 
       `,
-      imagePath: "./images/ucfunkit.jpg",
+      imagePath: "./images/uc-fun-kit.jpg",
       projectLink: "https://github.com/Zoher45/ENCE260-Project",
       skills: "C,Computer Architecture",
     },
     {
       name: "Island Trader",
       description: `
-                    This game was created during my second year in collaboration with my project partner, Jimmy. <br/>
-                    The objective is to accumulate as much money as possible by traveling through islands, buying and selling items. <br/>
+                    This game was created during my second year in collaboration with my project partner, Jimmy.
+                    The objective is to accumulate as much money as possible by traveling through islands, buying and selling items.
                     We developed the game using Java, with the GUI components created using Java Swing.
       `,
-      imagePath: "./images/sengproject.jpg",
+      imagePath: "./images/island-trader.jpg",
       projectLink: "https://github.com/Zoher45/SENG201_Project",
       skills: "Java,Java Swing,JUnit",
     },
@@ -114,7 +134,7 @@ function Item(props) {
   return (
     <Card
       sx={{
-        height: 700,
+        height: 750,
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -141,23 +161,27 @@ function Item(props) {
           <Chip label={item} sx={{ margin: "2px" }} variant="outlined" />
         ))}
       </CardContent>
-      <CardActions
-        sx={{
-          justifyContent: "center",
-          display: "flex",
-          paddingBottom: 3,
-        }}
-      >
-        <Button
-          color="inherit"
-          target="_blank"
-          variant="outlined"
-          sx={{ color: "black" }}
-          href={props.item.projectLink}
+      {props.item.projectLink ? (
+        <CardActions
+          sx={{
+            justifyContent: "center",
+            display: "flex",
+            paddingBottom: 3,
+          }}
         >
-          Find Out More
-        </Button>
-      </CardActions>
+          <Button
+            color="inherit"
+            target="_blank"
+            variant="outlined"
+            sx={{ color: "black" }}
+            href={props.item.projectLink}
+          >
+            Find Out More
+          </Button>
+        </CardActions>
+      ) : (
+        ""
+      )}
     </Card>
   );
 }
