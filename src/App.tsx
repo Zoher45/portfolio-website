@@ -4,6 +4,7 @@ import Home from "./components/Home.tsx";
 import About from "./components/About.tsx";
 import Certifications from "./components/Certifications.tsx";
 import Projects from "./components/Projects.tsx";
+import Footer from "./components/Footer.tsx";
 import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline, Container, Box } from "@mui/material";
@@ -13,13 +14,26 @@ const theme = createTheme({
   typography: {
     fontFamily: "Roboto, Arial, sans-serif",
     h4: {
-      fontFamily: "Roboto Slab, serif",
+      fontFamily: "Roboto Slab, Roboto",
       fontWeight: 700,
       color: "#0097a7",
     },
-    h6: {
-      fontFamily: "Roboto Slab, serif",
+    h5: {
+      fontFamily: "Roboto Slab, Roboto",
+      fontWeight: 500,
     },
+    h6: {
+      fontFamily: "Roboto Slab, Roboto",
+    },
+    body1: {
+    fontFamily: "Roboto Slab, Roboto",
+    fontSize: "20px"
+  },
+  body2: {
+    fontFamily: "Roboto Slab, Roboto",
+    fontSize: "17px"
+  },
+  
   },
   components: {
     MuiIconButton: {
@@ -39,18 +53,18 @@ const theme = createTheme({
 // Define global styles
 const globalStyles = {
   body: {
-    fontFamily: "Roboto, Arial, sans-serif",
+    fontFamily: "Roboto, Roboto",
     margin: 0,
     padding: 0,
     boxSizing: "border-box",
     backgroundColor: "#E0E0E0 !important",
   },
   h4: {
-    fontFamily: "Roboto Slab, serif",
+    fontFamily: "Roboto Slab, Roboto",
     fontWeight: 700,
   },
   h6: {
-    fontFamily: "Roboto Slab, serif",
+    fontFamily: "Roboto Slab, Roboto",
   },
 };
 
@@ -68,6 +82,7 @@ function App() {
           <Certifications />
         </Box>
       </Container>
+      <Footer />
     </ThemeProvider>
   );
 }

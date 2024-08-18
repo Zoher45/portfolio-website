@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Card,
-  CardContent,
-  CardMedia,
-  Grid,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import {Box, Typography, Card, CardContent, CardMedia, Grid, useMediaQuery, useTheme} from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
 import SchoolIcon from "@mui/icons-material/School";
 import WorkIcon from "@mui/icons-material/Work";

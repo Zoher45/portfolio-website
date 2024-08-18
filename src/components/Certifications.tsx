@@ -9,22 +9,22 @@ const Certifications = () => {
     {
       name: "Salesforce Certified AI Associate",
       issued: "August 2024",
-      imagePath: "./images/salesforcecertifiedaIassociate.png",
+      imagePath: "./images/salesforce-certified-aI-associate.png",
     },
     {
       name: "Introduction to Cybersecurity",
       issued: "August 2023",
-      imagePath: "./images/introductiontocybersecurity.png",
+      imagePath: "./images/introduction-to-cybersecurity.png",
     },
     {
       name: "Salesforce Certified Administrator",
       issued: "July 2023",
-      imagePath: "./images/salesforcecertifiedadministrator.png",
+      imagePath: "./images/salesforce-certified-administrator.png",
     },
     {
       name: "Salesforce Certified Associate",
       issued: "June 2023",
-      imagePath: "./images/salesforcecertifiedassociate.png",
+      imagePath: "./images/salesforce-certified-associate.png",
     },
   ];
 
@@ -33,7 +33,7 @@ const Certifications = () => {
       id="certifications"
       sx={{
         textAlign: "center",
-        paddingTop: 15,
+        paddingY: 15,
         paddingX: { xs: 2, sm: 4 },
         position: "relative",
       }}
