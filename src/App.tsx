@@ -77,8 +77,8 @@ function App() {
       <Container maxWidth="lg">
         <Box sx={{ my: 4 }}>
           <Home />
-          <About />
           <Projects />
+          <About />
           <Certifications />
         </Box>
       </Container>
