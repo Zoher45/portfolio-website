@@ -57,7 +57,7 @@ const Projects = () => {
       name: "Socket Programming",
       description: `
                     This socket programming is implemented using the TCP protocol. The main purpose 
-                    is to establish an understanding of how socket programming works. <br/>
+                    is to establish an understanding of how socket programming works.
                     TCP implementation was done using Python for this project.
       `,
       imagePath: "./images/socket-programming.jpg",
@@ -153,7 +153,7 @@ function Item(props) {
           {props.item.name}
         </Typography>
         <Typography variant="body1" color="text.secondary">
-          <span dangerouslySetInnerHTML={{ __html: props.item.description }} />
+          {props.item.description }
         </Typography>
         <br />
 
