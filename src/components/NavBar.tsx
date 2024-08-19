@@ -28,8 +28,8 @@ const Navbar = () => {
 
   const menuItems = [
     { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
+    { label: "About", href: "#about" },
     { label: "Certifications", href: "#certifications" },
   ];
 

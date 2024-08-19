@@ -27,8 +27,8 @@ const Footer = () => {
           spacing={5}
           sx={{ justifyContent: "center", alignContent: "center" }}
         >
-          <Grid item xs={12} sm={7}>
-            <Typography variant="h6" gutterBottom>
+          <Grid item xs={12} sm={6}>
+            <Typography variant="h5" gutterBottom>
               Zoher Hussein
             </Typography>
             <Typography variant="body2">
@@ -81,8 +81,8 @@ const Footer = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} sm={5}>
-            <Typography variant="h6" gutterBottom>
+          <Grid item xs={12} sm={6}>
+            <Typography variant="h5" gutterBottom>
               Contact Information
             </Typography>
             <Box display="flex" alignItems="center" sx={{ paddingTop: 2 }}>
