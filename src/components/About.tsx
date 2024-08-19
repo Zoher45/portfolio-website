@@ -128,8 +128,10 @@ const About = () => {
                 {item.title}
               </TimelineOppositeContent>
               <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot color="primary">{item.icon}</TimelineDot>
+                <TimelineConnector/>
+                <TimelineDot sx={{ background: "#0097a7" }}>
+                  {item.icon}
+                </TimelineDot>
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent sx={{ py: "12px", px: 2 }}>
