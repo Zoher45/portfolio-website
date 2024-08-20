@@ -64,7 +64,7 @@ const Footer = () => {
                 <Box display="flex" alignItems="center">
                   <IconButton
                     component={Link}
-                    href="https://www.salesforce.com/trailblazer/profile"
+                    href="https://www.salesforce.com/trailblazer/zoherh"
                     target="_blank"
                     aria-label="Trailhead"
                     sx={{ color: "white", "&:hover": { color: "#007bb5" } }}

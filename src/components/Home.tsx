@@ -55,8 +55,7 @@ const Home = () => {
         justifyContent="center"
         alignItems="center"
         spacing={4}
-
-        sx={{paddingTop:5}}
+        sx={{ paddingTop: 5 }}
       >
         <Grid item>
           <Avatar
@@ -122,7 +121,7 @@ const Home = () => {
             </IconButton>
             <IconButton
               component="a"
-              href="https://www.salesforce.com/trailblazer/profile"
+              href="https://www.salesforce.com/trailblazer/zoherh"
               target="_blank"
               aria-label="Trailhead account link"
               sx={{ color: "#00A1E0", "&:hover": { color: "#007bb5" } }}
