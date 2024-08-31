@@ -155,7 +155,7 @@ const ProjectCard = ({ item }) => {
         src={item.imagePath}
         alt={`${item.name} - Project`}
         loading="lazy"
-        sx={{ objectFit: "cover", height: 350, paddingTop: 1 }}
+        sx={{ objectFit: "contain", height: 350, padding: "2px" }}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
