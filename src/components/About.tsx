@@ -19,6 +19,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
+import { Helmet } from "react-helmet";
 
 const About = () => {
   const theme = useTheme();
@@ -80,9 +81,18 @@ const About = () => {
         px: isMobile ? 2 : 4,
       }}
     >
+      <Helmet>
+        <title>About Me | Zoher Hussein</title>
+        <meta
+          name="description"
+          content="Learn more about Zoher Hussein's journey in computer science, education, and career. From starting in high school to working as a Salesforce Engineer at Xero."
+        />
+      </Helmet>
+
       <Typography variant="h4" paddingBottom={5} gutterBottom>
         About Me
       </Typography>
+      
       {isMobile ? (
         <Grid container spacing={2} justifyContent="center">
           {items.map((item, index) => (
@@ -128,7 +138,7 @@ const About = () => {
                 {item.title}
               </TimelineOppositeContent>
               <TimelineSeparator>
-                <TimelineConnector/>
+                <TimelineConnector />
                 <TimelineDot sx={{ background: "#0097a7" }}>
                   {item.icon}
                 </TimelineDot>
