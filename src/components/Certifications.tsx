@@ -50,7 +50,10 @@ const Certifications = () => {
                 maxWidth: 250,
                 margin: "auto",
                 borderRadius: 2,
-                boxShadow: 3,
+                boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
+                ":hover": {
+                  boxShadow: '0px 8px 16px #0097a7',
+                },
               }}
             >
               <CardMedia
