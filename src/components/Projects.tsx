@@ -17,7 +17,7 @@ const items = [
       `,
     imagePath: "./images/personal-website.jpg",
     projectLink: "https://github.com/Zoher45/portfolio-website",
-    skills: "TypeScript,MUI,React,Vercel",
+    skills: "TypeScript,MUI,React,Vercel,SEO",
   },
   {
     name: "Client Website - Prime Finishes Limited",
