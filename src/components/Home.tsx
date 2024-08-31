@@ -3,6 +3,7 @@ import { Box, Typography, Avatar, Grid, IconButton } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
+import { Helmet } from "react-helmet";
 
 const emailButtonStyle = {
   color: "#d14836",
@@ -25,6 +26,39 @@ const Home = () => {
         position: "relative",
       }}
     >
+      <Helmet>
+        <title>Home | Zoher Hussein</title>
+        <meta
+          name="description"
+          content="This is the portfolio of Zoher Hussein, a software engineer specializing in Salesforce and web development. In this page you can view the author, an introduction, and contact information."
+        />
+        <script type="application/ld+json">
+          {`
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Zoher Hussein",
+        "jobTitle": "Associate Salesforce Engineer",
+        "url": "https://www.zoherhussein.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/zoher-hussein/",
+          "https://github.com/Zoher45",
+          "https://www.salesforce.com/trailblazer/zoherh"
+        ],
+        "email": "zoher.azhar.hussein@gmail.com",
+        "alumniOf": {
+          "@type": "Organization",
+          "name": "University of Canterbury "
+        },
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Xero"
+        }
+      }
+    `}
+        </script>
+      </Helmet>
+
       <Typography variant="h6" gutterBottom>
         <Box
           component="span"
@@ -59,15 +93,25 @@ const Home = () => {
       >
         <Grid item>
           <Avatar
-            alt="Profile Picture"
-            src="./images/avatar.jpg"
             sx={{
               width: { xs: 150, sm: 250, md: 300 },
               height: { xs: 150, sm: 250, md: 300 },
               border: "2px solid grey",
               boxShadow: "0 5px 13px 0 #0097a7",
             }}
-          />
+          >
+            <img
+              src="./images/avatar.jpg"
+              alt="Zoher Hussein - Associate Salesforce Engineer at Xero."
+              loading="lazy"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "50%",
+              }}
+            />
+          </Avatar>
         </Grid>
         <Grid item xs={10} sm={8} md={6}>
           <Typography
