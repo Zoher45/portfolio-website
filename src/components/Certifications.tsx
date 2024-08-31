@@ -3,6 +3,7 @@ import { Box, Typography, Grid, CardActionArea } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import { Helmet } from "react-helmet"; // Import Helmet for meta tags
 
 const Certifications = () => {
   const items = [
@@ -42,13 +43,21 @@ const Certifications = () => {
         position: "relative",
       }}
     >
+      <Helmet>
+        <title>Certifications | Zoher Hussein</title>
+        <meta
+          name="description"
+          content="View Zoher Hussein's certifications, including Salesforce and cybersecurity credentials. Explore the details of each certification earned and the verification source."
+        />
+      </Helmet>
+
       <Typography variant="h4" paddingBottom={5} gutterBottom>
         Certifications
       </Typography>
 
       <Grid container spacing={2} justifyContent="center">
         {items.map((item, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
+          <Grid item xs={12} sm={6} md={3} key={item.name}>
             <Card
               sx={{
                 maxWidth: 250,
@@ -60,12 +69,19 @@ const Certifications = () => {
                 },
               }}
             >
-              <CardActionArea component="a" href={item.link} target="_blank">
+              <CardActionArea
+                component="a"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`View details for ${item.name}`}
+              >
                 <CardMedia
                   component="img"
                   height="140"
                   image={item.imagePath}
-                  alt={item.name}
+                  alt={`Certification badge for ${item.name}`}
+                  loading="lazy"
                   sx={{ objectFit: "contain", paddingTop: 1 }}
                 />
                 <CardContent>
