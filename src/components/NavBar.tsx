@@ -12,8 +12,13 @@ import {
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const { hash } = useLocation();
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -26,12 +31,37 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100); // Adjust delay if needed
+    }
+  };
+
+  const handleNavigation = (href) => {
+    if (href.startsWith("#")) {
+      scrollToSection(href.substring(1)); // Remove the '#' from href
+    } else {
+      navigate(href);
+      window.scrollTo(0, 0);
+    }
+  };
+
   const menuItems = [
-    { label: "Home", href: "#home" },
-    { label: "Projects", href: "#projects" },
-    { label: "About", href: "#about" },
-    { label: "Certifications", href: "#certifications" },
+    { label: "Home", href: "/" },
+    { label: "Projects", href: "/#projects" },
+    { label: "About", href: "/#about" },
+    { label: "Certifications", href: "/#certifications" },
+    { label: "Blogs", href: "/blogs" },
   ];
+
+  useEffect(() => {
+    if (hash) {
+      scrollToSection(hash.substring(1)); // Remove the '#' from hash
+    }
+  }, [hash]);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -69,9 +99,7 @@ const Navbar = () => {
                 {menuItems.map((item) => (
                   <MenuItem
                     key={item.label}
-                    onClick={handleClose}
-                    component="a"
-                    href={item.href}
+                    onClick={() => handleNavigation(item.href)}
                   >
                     {item.label}
                   </MenuItem>
@@ -85,8 +113,8 @@ const Navbar = () => {
                   key={item.label}
                   color="inherit"
                   variant="outlined"
-                  sx={{ margin: " 10px" }}
-                  href={item.href}
+                  sx={{ margin: "10px" }}
+                  onClick={() => handleNavigation(item.href)}
                 >
                   {item.label}
                 </Button>

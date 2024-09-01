@@ -9,6 +9,9 @@ import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline, Container, Box } from "@mui/material";
 import GlobalStyles from "@mui/material/GlobalStyles";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Blog from "./components/Blog.tsx"; // Your blog post component
+import BlogPost from "./components/BlogPost.tsx"; // Your blog post component
 
 const theme = createTheme({
   typography: {
@@ -26,14 +29,13 @@ const theme = createTheme({
       fontFamily: "Roboto Slab, Roboto",
     },
     body1: {
-    fontFamily: "Roboto Slab, Roboto",
-    fontSize: "20px"
-  },
-  body2: {
-    fontFamily: "Roboto Slab, Roboto",
-    fontSize: "17px"
-  },
-  
+      fontFamily: "Roboto Slab, Roboto",
+      fontSize: "20px",
+    },
+    body2: {
+      fontFamily: "Roboto Slab, Roboto",
+      fontSize: "17px",
+    },
   },
   components: {
     MuiIconButton: {
@@ -73,16 +75,40 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles styles={globalStyles} />
       <CssBaseline />
-      <Navbar />
-      <Container maxWidth="lg">
-        <Box sx={{ my: 4 }}>
-          <Home />
-          <Projects />
-          <About />
-          <Certifications />
-        </Box>
-      </Container>
-      <Footer />
+      <Router>
+        <Navbar />
+        <main>
+          <Container
+            maxWidth="lg"
+            sx={{
+              position: "relative",
+              minHeight: "100vh",
+            }}
+          >
+            <Box sx={{ my: 4 }}>
+              <Routes>
+                {/* Blog Post Route */}
+                <Route path="/blog/:slug" element={<BlogPost />} />
+                <Route path="/blogs" element={<Blog />} />
+
+                {/* Default Route for all other pages */}
+                <Route
+                  path="/"
+                  element={
+                    <>
+                      <Home />
+                      <Projects />
+                      <About />
+                      <Certifications />
+                    </>
+                  }
+                />
+              </Routes>
+            </Box>
+          </Container>
+          <Footer />
+        </main>
+      </Router>
     </ThemeProvider>
   );
 }
