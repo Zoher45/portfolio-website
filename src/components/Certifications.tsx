@@ -44,7 +44,7 @@ const Certifications = () => {
       }}
     >
       <Helmet>
-        <title>Certifications | Zoher Hussein</title>
+        <title>Zoher Hussein</title>
         <meta
           name="description"
           content="View Zoher Hussein's certifications, including Salesforce and cybersecurity credentials. Explore the details of each certification earned and the verification source."
