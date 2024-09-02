@@ -36,30 +36,30 @@ const Navbar = () => {
     if (element) {
       setTimeout(() => {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100); // Adjust delay if needed
+      }, 100); // Adjust delay so after load it will go to id element
     }
   };
 
-  const handleNavigation = (href) => {
-    if (href.startsWith("#")) {
-      scrollToSection(href.substring(1)); // Remove the '#' from href
+  const handleNavigation = (to) => {
+    if (to.startsWith("#")) {
+      scrollToSection(to.substring(1)); // Remove the '#' from to
     } else {
-      navigate(href);
+      navigate(to);
       window.scrollTo(0, 0);
     }
   };
 
   const menuItems = [
-    { label: "Home", href: "/" },
-    { label: "Projects", href: "/#projects" },
-    { label: "About", href: "/#about" },
-    { label: "Certifications", href: "/#certifications" },
-    { label: "Blogs", href: "/blogs" },
+    { label: "Home", to: "/" },
+    { label: "Projects", to: "/#projects" },
+    { label: "About", to: "/#about" },
+    { label: "Certifications", to: "/#certifications" },
+    { label: "Posts", to: "/posts" },
   ];
 
   useEffect(() => {
     if (hash) {
-      scrollToSection(hash.substring(1)); // Remove the '#' from hash
+      scrollToSection(hash.substring(1));
     }
   }, [hash]);
 
@@ -99,7 +99,7 @@ const Navbar = () => {
                 {menuItems.map((item) => (
                   <MenuItem
                     key={item.label}
-                    onClick={() => handleNavigation(item.href)}
+                    onClick={() => handleNavigation(item.to)}
                   >
                     {item.label}
                   </MenuItem>
@@ -114,7 +114,7 @@ const Navbar = () => {
                   color="inherit"
                   variant="outlined"
                   sx={{ margin: "10px" }}
-                  onClick={() => handleNavigation(item.href)}
+                  onClick={() => handleNavigation(item.to)}
                 >
                   {item.label}
                 </Button>

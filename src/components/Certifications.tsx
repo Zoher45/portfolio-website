@@ -63,9 +63,12 @@ const Certifications = () => {
                 maxWidth: 250,
                 margin: "auto",
                 borderRadius: 2,
-                boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
-                ":hover": {
-                  boxShadow: "0px 8px 16px #0097a7",
+                transition:
+                  "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+                boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+                "&:hover": {
+                  transform: "translateY(-8px)",
+                  boxShadow: "0 12px 24px #0097a7",
                 },
               }}
             >

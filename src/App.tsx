@@ -10,9 +10,9 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline, Container, Box } from "@mui/material";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Blog from "./components/Blog.tsx"; // Your blog post component
-import BlogPost from "./components/BlogPost.tsx"; // Your blog post component
-
+import Posts from "./components/Posts.tsx";
+import Post from "./components/Post.tsx";
+import NotFoundPage from "./components/NotFoundPage.tsx";
 const theme = createTheme({
   typography: {
     fontFamily: "Roboto, Arial, sans-serif",
@@ -87,11 +87,9 @@ function App() {
           >
             <Box sx={{ my: 4 }}>
               <Routes>
-                {/* Blog Post Route */}
-                <Route path="/blog/:slug" element={<BlogPost />} />
-                <Route path="/blogs" element={<Blog />} />
-
-                {/* Default Route for all other pages */}
+                <Route path="/post/:slug" element={<Post />} />
+                <Route path="/posts" element={<Posts />} />
+                <Route path="*" element={<NotFoundPage />} />
                 <Route
                   path="/"
                   element={
