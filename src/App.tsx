@@ -1,18 +1,18 @@
 import "./App.css";
-import Navbar from "./components/NavBar.tsx";
-import Home from "./components/Home.tsx";
-import About from "./components/About.tsx";
-import Certifications from "./components/Certifications.tsx";
-import Projects from "./components/Projects.tsx";
-import Footer from "./components/Footer.tsx";
+import Navbar from "./components/NavBar";
+import Home from "./components/Home";
+import About from "./components/About";
+import Certifications from "./components/Certifications";
+import Projects from "./components/Projects";
+import Footer from "./components/Footer";
 import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline, Container, Box } from "@mui/material";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Posts from "./components/Posts.tsx";
-import Post from "./components/Post.tsx";
-import NotFoundPage from "./components/NotFoundPage.tsx";
+import Posts from "./components/Posts";
+import Post from "./components/Post";
+import NotFoundPage from "./components/NotFoundPage";
 const theme = createTheme({
   typography: {
     fontFamily: "Roboto, Arial, sans-serif",
