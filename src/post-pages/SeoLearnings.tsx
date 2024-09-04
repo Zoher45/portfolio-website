@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Box, Typography } from "@mui/material";
-import { fetchMarkdown } from "../utils/fetchMarkdown.tsx";
+import { fetchMarkdown } from "../utils/FetchMarkdown.tsx";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import CodeBlock from "../utils/CodeBlock.tsx";
 
 const SeoLearnings = () => {
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState<string>("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,17 +29,7 @@ const SeoLearnings = () => {
   }
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        paddingTop: 10,
-        position: "relative",
-      }}
-    >
+    <Box sx={{ paddingTop: 10, paddingX: 2, maxWidth: 800, margin: "0 auto" }}>
       <Helmet>
         <title>SEO Learnings | Zoher Hussein</title>
         <meta
@@ -60,7 +51,21 @@ const SeoLearnings = () => {
           content="https://www.zoherhussein.com/post/seo-learnings"
         />
       </Helmet>
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      {/* Centered title */}
+      <Typography
+        variant="h2"
+        sx={{ textAlign: "center", marginBottom: 4, fontWeight: "bold" }}
+      >
+        My SEO Learnings
+      </Typography>
+      {/* Left-aligned content */}
+      <Box sx={{ textAlign: "left", paddingY: 8 }}>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          children={content}
+          components={{ code: CodeBlock }}
+        />
+      </Box>
     </Box>
   );
 };
