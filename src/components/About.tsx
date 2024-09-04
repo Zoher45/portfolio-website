@@ -92,7 +92,7 @@ const About = () => {
       <Typography variant="h4" paddingBottom={5} gutterBottom>
         About Me
       </Typography>
-      
+
       {isMobile ? (
         <Grid container spacing={2} justifyContent="center">
           {items.map((item, index) => (
@@ -128,8 +128,8 @@ const About = () => {
         </Grid>
       ) : (
         <Timeline position="alternate">
-          {items.map((item) => (
-            <TimelineItem>
+          {items.map((item, index) => (
+            <TimelineItem key={index}>
               <TimelineOppositeContent
                 sx={{ m: "auto 0" }}
                 variant="h6"

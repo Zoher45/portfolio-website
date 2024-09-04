@@ -11,8 +11,9 @@ import { CssBaseline, Container, Box } from "@mui/material";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Posts from "./components/Posts.tsx";
-import Post from "./components/Post.tsx";
-import NotFoundPage from "./components/NotFoundPage.tsx";
+import ErrorPage from "./components/ErrorPage.tsx";
+import SeoLearnings from "./post-pages/SeoLearnings.tsx";
+
 const theme = createTheme({
   typography: {
     fontFamily: "Roboto, Arial, sans-serif",
@@ -87,9 +88,12 @@ function App() {
           >
             <Box sx={{ my: 4 }}>
               <Routes>
-                <Route path="/post/:slug" element={<Post />} />
+                {/* Post pages */}
+                <Route path="/post/seo-learnings" element={<SeoLearnings />} />
+
+                {/* Components */}
                 <Route path="/posts" element={<Posts />} />
-                <Route path="*" element={<NotFoundPage />} />
+                <Route path="*" element={<ErrorPage />} />
                 <Route
                   path="/"
                   element={

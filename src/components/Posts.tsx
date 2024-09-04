@@ -2,13 +2,13 @@ import React from "react";
 import {
   Box,
   Typography,
-  Link,
   Card,
   CardContent,
   CardActionArea,
 } from "@mui/material";
 import { AccessTime } from "@mui/icons-material";
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
 
 const blogPosts = [
   {
@@ -21,6 +21,12 @@ const blogPosts = [
 ];
 
 const Posts = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = (slug) => {
+    navigate(`/post/${slug}`);
+  };
+
   return (
     <Box
       id="home"
@@ -35,11 +41,28 @@ const Posts = () => {
       }}
     >
       <Helmet>
-        <title>Posts | Zoher Hussein</title>
+        <title>Blog Posts | Zoher Hussein</title>
         <meta
           name="description"
-          content="Posts by Zoher Hussein covering various topics, including learnings, how-tos, guides, and articles."
+          content="Browse blog posts by Zoher Hussein covering a range of topics including SEO, tech guides, and more. Find valuable insights and information."
         />
+        <meta
+          name="keywords"
+          content="blog, posts, Zoher Hussein, SEO, tech guides, articles"
+        />
+        <meta property="og:title" content="Blog Posts | Zoher Hussein" />
+        <meta
+          property="og:description"
+          content="Browse blog posts by Zoher Hussein covering a range of topics including SEO, tech guides, and more. Find valuable insights and information."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.zoherhussein.com/posts" />
+        <meta
+          property="og:image"
+          content="https://www.zoherhussein.com/path/to/your-image.jpg"
+        />{" "}
+        {/* Replace with actual image URL */}
+        <meta property="og:image:alt" content="Blog Posts by Zoher Hussein" />
       </Helmet>
 
       <Typography variant="h4" fontWeight="bold" gutterBottom>
@@ -75,11 +98,7 @@ const Posts = () => {
               overflow: "hidden",
             }}
           >
-            <CardActionArea
-              component={Link}
-              href={`/post/${post.slug}`}
-              underline="none"
-            >
+            <CardActionArea onClick={() => handleNavigate(post.slug)}>
               <CardContent>
                 <Typography
                   variant="h6"

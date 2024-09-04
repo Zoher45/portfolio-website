@@ -3,7 +3,10 @@ import { Box, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
-const NotFoundPage = () => {
+const ErrorPage = ({
+  errorCode = "Error",
+  errorMessage = "Oops! Something went wrong.",
+}) => {
   const navigate = useNavigate();
 
   const handleGoHome = () => {
@@ -22,18 +25,18 @@ const NotFoundPage = () => {
       }}
     >
       <Helmet>
-        <title>Error | Zoher Hussein</title>
+        <title>{`${errorCode} | Zoher Hussein`}</title>
         <meta
           name="description"
-          content="This is an error page that user has come across. Where the page doesn't exist."
+          content="An unexpected error occurred. Please try again later or go back to the homepage."
         />
       </Helmet>
 
       <Typography variant="h1" color="#0097a7" gutterBottom>
-        404
+        {errorCode}
       </Typography>
       <Typography variant="h5" color="textSecondary" gutterBottom>
-        Oops! The page you're looking for doesn't exist.
+        {errorMessage}
       </Typography>
       <Button
         variant="contained"
@@ -42,7 +45,7 @@ const NotFoundPage = () => {
           mt: 2,
           bgcolor: "#0097a7",
           "&:hover": {
-            bgcolor: "#007b8f", //removes the variant hover
+            bgcolor: "#007b8f",
           },
         }}
       >
@@ -52,4 +55,4 @@ const NotFoundPage = () => {
   );
 };
 
-export default NotFoundPage;
+export default ErrorPage;

@@ -3,7 +3,7 @@ import { Box, Typography, Grid, CardActionArea } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import { Helmet } from "react-helmet"; // Import Helmet for meta tags
+import { Helmet } from "react-helmet";
 
 const Certifications = () => {
   const items = [
