@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Box, Typography } from "@mui/material";
-import { fetchMarkdown } from "../utils/FetchMarkdown.tsx";
+import { fetchMarkdown } from "../utils/fetchMarkdown.tsx";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import CodeBlock from "../utils/CodeBlock.tsx";
